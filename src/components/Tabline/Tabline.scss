@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "../../globals";
+
+$level0: #22262e;
+$level1: #2d3139;
+$level2: #42464e;
+
+$red: #e06c75;
+$green: #98c379;
+
+.tabline {
+  display: flex;
+  justify-content: space-between;
+  background-color: $level0;
+
+  > div {
+    display: flex;
+  }
+
+  &-mode {
+    padding-left: 1ch;
+
+    &--0 {
+      $color: map.get(globals.$mode-color, "normal");
+
+      background-color: $color;
+      color: black;
+
+      > span {
+        color: $color;
+        background-color: $level2;
+        padding-right: 1ch;
+      }
+    }
+  }
+
+  &-file {
+    background-color: $level1;
+
+    &::before {
+      content: " ";
+      color: $level2;
+    }
+
+    &::after {
+      content: "";
+      color: $level1;
+      background-color: $level0;
+    }
+  }
+
+  &-folder,
+  &-credits {
+    background-color: $level1;
+    padding-right: 1ch;
+
+    &::before {
+      content: "";
+      background-color: var(--bg-color);
+      color: var(--color);
+    }
+
+    > span {
+      color: $level0;
+      background-color: var(--color);
+      margin-right: 1ch;
+    }
+  }
+
+  &-folder {
+    --bg-color: #{$level0};
+    --color: #{$red};
+  }
+
+  &-credits {
+    --bg-color: #{$level1};
+    --color: #{$green};
+    color: $green;
+  }
+}

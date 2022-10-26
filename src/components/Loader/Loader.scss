@@ -1,0 +1,21 @@
+@use "../../globals";
+
+.nvim-loader {
+  font-family: globals.$firacode;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 1ch;
+
+  background-color: black;
+  color: #0f0;
+  z-index: 9999999;
+
+  &.loaded {
+    z-index: -1;
+  }
+}
+

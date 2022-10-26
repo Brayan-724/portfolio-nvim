@@ -1,0 +1,36 @@
+@use "./globals";
+
+/** fonts **/
+
+@font-face {
+  font-family: "FiraCode";
+  src: url("/fonts/FiraCodeRegularMono.ttf") format("truetype");
+  font-weight: 300 400;
+}
+
+@font-face {
+  font-family: "FiraCode";
+  src: url("/fonts/FiraCodeLightMono.ttf") format("truetype");
+  font-weight: 100 200;
+}
+
+@font-face {
+  font-family: "FiraCode";
+  src: url("/fonts/FiraCodeSemiBoldMono.ttf") format("truetype");
+  font-weight: 500 600;
+}
+
+@font-face {
+  font-family: "FiraCode";
+  src: url("/fonts/FiraCodeBoldMono.ttf") format("truetype");
+  font-weight: 700 900;
+}
+
+*, *::after, *::before {
+  line-height: 1.25;
+}
+
+html {
+  font-family: globals.$firacode;
+  color: globals.$text-color;
+}

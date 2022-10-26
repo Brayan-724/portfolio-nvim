@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "../../globals";
+
+.side-tree {
+  width: 300px;
+  border-right: solid 2px #464d58;
+  padding: 1ch;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  background-color: map.get(globals.$colors, "back-side");
+
+  a {
+    color: currentColor;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &-folder {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-left: 2ch;
+
+    > span {
+      color: #72c0ff;
+      cursor: pointer;
+
+      &::before {
+        content: "  ";
+      }
+    }
+
+    > a {
+      margin-left: 4ch;
+    }
+
+    &.open {
+      > span::before {
+        content: "  ";
+      }
+    }
+  }
+
+  &-file {
+    color: globals.$text-color;
+    margin-left: 2ch;
+
+    &.selected {
+      color: #e7c787;
+    }
+  }
+
+  & > &-folder {
+    margin-left: 0;
+  }
+}
