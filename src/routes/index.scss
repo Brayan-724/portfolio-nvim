@@ -1,5 +1,16 @@
 .content > .page {
-  > img {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .page-avatar {
+    margin-top: 1ch;
     max-width: 250px;
+
+    align-self: center;
+  }
+
+  .center {
+    align-self: center;
   }
 }
