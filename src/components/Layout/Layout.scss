@@ -8,11 +8,16 @@
 
   background: map.get(globals.$colors, "back");
 
-  display: grid;
-  grid-template-columns: auto 1fr;
+  > .side-tree {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
 
   > .content {
-
+    --width: 300px;
+    margin-left: calc(var(--width) + 2ch + 2px);
   }
 
   > .bottom-content {
@@ -20,5 +25,31 @@
     bottom: 0;
     left: 0;
     right: 0;
+  }
+
+  @media (min-width: globals.$breakpoint-md) and (max-width: globals.$breakpoint-lg) {
+    > .content {
+      --width: 250px;
+    }
+
+    > .side-tree {
+      width: 250px;
+    }
+  }
+
+  @media (max-width: globals.$breakpoint-md) {
+    > .content {
+      --width: 0px;
+      margin-left: 0px;
+      padding: 1ch;
+    }
+
+    > .side-tree {
+      display: none;
+
+      &-btn {
+        display: block;
+      }
+    }
   }
 }

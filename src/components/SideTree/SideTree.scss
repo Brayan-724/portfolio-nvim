@@ -21,6 +21,25 @@
     }
   }
 
+  &-btn {
+    display: none;
+    position: fixed;
+
+    > button {
+      z-index: 100;
+
+      width: 2em;
+      height: 2em;
+      margin: 0.5ch;
+
+      background: map.get(globals.$colors, "back");
+      color: inherit;
+
+      font-size: 1.5rem;
+      border: solid 1px #464d58;
+    }
+  }
+
   &-folder {
     display: flex;
     flex-direction: column;
@@ -58,5 +77,15 @@
 
   & > &-folder {
     margin-left: 0;
+  }
+
+  &-open {
+    display: flex !important;
+  }
+
+  @media (max-width: globals.$breakpoint-md) {
+    width: 100vw;
+    padding-top: calc(1ch + 3.5rem);
+    font-size: 1rem;
   }
 }
