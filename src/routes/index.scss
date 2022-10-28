@@ -1,10 +1,11 @@
 .content > .page {
+  padding: 0 1ch;
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
 
   .page-avatar {
-    margin-top: 1ch;
+    margin: 1ch 0;
     max-width: 250px;
 
     align-self: center;
@@ -12,5 +13,13 @@
 
   .center {
     align-self: center;
+    text-align: center;
+  }
+
+  a {
+    color: #72c0ff;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
