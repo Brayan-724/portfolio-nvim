@@ -11,7 +11,7 @@ export default function SideTree() {
         <SideTreeFolderContext.Provider
           value={{ base: "", onClick: () => setIsOpened(false) }}
         >
-          <SideTreeFolderNode name="Proyects" base="/proyects">
+          <SideTreeFolderNode name="Proyects" base="/proyect">
             <SideTreeFileNode href="/nasgar" text="Nasgar Network" icon="爵" />
             <SideTreeFileNode href="/densky" text="Densky" icon="ﯤ" />
             <SideTreeFileNode href="/rusky" text="Rusky" icon="" />
