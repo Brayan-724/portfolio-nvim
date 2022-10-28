@@ -8,7 +8,9 @@ export default function SideTree() {
   return (
     <>
       <div class={"side-tree " + (isOpened ? "side-tree-open" : "")}>
-        <SideTreeFolderContext.Provider value={{ base: "" }}>
+        <SideTreeFolderContext.Provider
+          value={{ base: "", onClick: () => setIsOpened(false) }}
+        >
           <SideTreeFolderNode name="Proyects" base="/proyects">
             <SideTreeFileNode href="/nasgar" text="Nasgar Network" icon="爵" />
             <SideTreeFileNode href="/densky" text="Densky" icon="ﯤ" />
@@ -31,7 +33,9 @@ export default function SideTree() {
       </div>
 
       <div class="side-tree-btn">
-        <button onClick={() => setIsOpened(_ => !_)}>{isOpened ? "" : ""}</button>
+        <button onClick={() => setIsOpened((_) => !_)}>
+          {isOpened ? "" : ""}
+        </button>
       </div>
     </>
   );

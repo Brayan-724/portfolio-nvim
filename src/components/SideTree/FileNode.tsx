@@ -13,11 +13,18 @@ export default function SideTreeFileNode({
 }) {
   const [pathame] = useLocation();
   const folderContext = useContext(SideTreeFolderContext);
-  const pathnameHref = useMemo(() => folderContext.base + href.split("#")[0], [href]);
+  const pathnameHref = useMemo(
+    () => folderContext.base + href.split("#")[0],
+    [href]
+  );
   const selected = pathnameHref === pathame;
 
   return (
-    <Link class={"side-tree-file " + (selected ? "selected" : "")} href={folderContext.base + href}>
+    <Link
+      class={"side-tree-file " + (selected ? "selected" : "")}
+      href={folderContext.base + href}
+      onClick={folderContext.onClick}
+    >
       {icon + " "}
       {text}
     </Link>
